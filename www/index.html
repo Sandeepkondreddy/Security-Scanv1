@@ -183,8 +183,8 @@
 <script type="text/javascript">
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
-    $("#hiduuid").val(device.uuid);
-    window.plugins.imeiplugin.getImei(callback);	
+   // $("#hiduuid").val(device.uuid);
+    //window.plugins.imeiplugin.getImei(callback);	
 	}
 	function callback(imei) {
 	$("#hidimei").val(imei);
@@ -231,7 +231,8 @@
 				{
 					if(document.getElementById('lblScanText').innerHTML=='Visitor Scan')
 					{
-						window.location.href = 'VisitorDetails.html?id=' + result.text+'-'+$("#hidimei").val();
+						window.location.href = 'VisitorDetails.html?id=' + result.text;
+						//window.location.href = 'VisitorDetails.html?id=' + result.text+'-'+$("#hidimei").val();
 					}
 					else if(document.getElementById('lblScanText').innerHTML=='Employee Scan')
 					{
