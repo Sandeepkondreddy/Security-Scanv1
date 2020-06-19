@@ -1,107 +1,425 @@
-﻿/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+﻿::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 0px solid #ccc;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+.backbar{
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.back {
+    border-radius: 30%;
+}
+.back:hover {
+    background-color: #eaeaea;
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-    font-size:12px;
-    height:100vh;
-    margin:0px;
-    padding:0px;
-    /* Padding to avoid the "unsafe" areas behind notches in the screen */
-    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
-    text-transform:uppercase;
-    width:100%;
+    /*margin-top: 100px;*/
+    font-family: 'Ubuntu';
+    font-size: 13px;
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+label {
+    color: black;
+    font-size: 12px;
 }
 
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
+.datalabel{
+    font-weight: bold;
+}
+
+.containerwell{
+    min-height: 20px;
+    padding: 19px;
+    padding-top: 60px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+}
+
+input[type="button"]:focus{
+    outline: none;
+}
+
+.headertext{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 1px 2px #9D9C9C;
+}
+
+.fa{
+    color: black;
+}
+
+.i-thumbnail{
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+    padding: 5px;
+    width: 8em;
+    text-align: center;
+    vertical-align: middle;
+    height: 8em;
+    display: inline-block;
+}
+
+.stylebutton{
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+}
+
+.navbar {
+    height: 100px;
+    padding: 10px;
+    border: 0px;
+    border-top: 3px solid #e74c3c;
+    text-align: center;
+}
+
+.navbar-center{
+    text-align: center;
+}
+
+.text-header {
+  color: #16A085;
+}
+
+.mytable{
+    width: 100%;
+    height: auto;
+    border: 0;
+    padding: 5px;
+}
+
+.headerbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    height: 50px;
+    background-color: #fff;
+    border-bottom: 2px solid #16A085;
+    /*border-top: 3px solid #e74c3c;
+    border-bottom: 2px solid #e74c3c;*/
+    /* IE10+ */
+    /*background-image: -ms-linear-gradient(bottom, #f0f0f0 10%, #f5f5f5 70%);*/
+    /* Mozilla Firefox */
+    /*background-image: -moz-linear-gradient(bottom, #f0f0f0 10%, #f5f5f5 70%);*/
+    /* Opera */
+    /*background-image: -o-linear-gradient(bottom, #f0f0f0 10%, #f5f5f5 70%);*/
+    /* Webkit (Safari/Chrome 10) */
+    /*background-image: -webkit-gradient(linear, left bottom, left top, color-stop(10, #f0f0f0), color-stop(70, #f5f5f5));*/
+    /* Webkit (Chrome 11+) */
+    /*background-image: -webkit-linear-gradient(bottom, #f0f0f0 10%, #f5f5f5 70%);*/
+    /* W3C Markup */
+    /*background-image: linear-gradient(to top, #f0f0f0 10%, #f5f5f5 70%);
+    background-attachment: fixed;*/
+}
+.topbar{
+    background-color: #fff;
+    border-bottom: 2px solid #16A085;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    /*height: 50px;*/
+    vertical-align: middle;
+    padding: 10px;
+}
+.topbar001{
+    background-color: #fff;
+    /*border-bottom: 2px solid #16A085;*/
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    /*height: 50px;*/
+    vertical-align: middle;
+    padding: 3px;
+}
+.topbar-icon{
+    width: 50px;
+    cursor: pointer;
+}
+.topbar label{
+    font-size: 12px;
+    text-shadow: 1px 1px 2px #9D9C9C;
+    font-family: 'Roboto';
+}
+@media only screen and (min-width: 100px) and (max-width: 768px) {
+    .topbar img{
+        width: 90%;
+        height: 35px;
     }
 }
-
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+@media only screen and (min-width: 768px) {
+    .topbar img{
+        width: 50%;
+        height: 35px;
+    }
+}
+.footer
+{
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+.imglogo{
+    border-radius: 10%;
+    height: 35px;
+    width: 35px;
+    box-shadow: 1px 1px 2px #b4b4b4;
 }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
+.page-header {
+    padding: 0;
+    border-bottom: 1px solid #bdbdbd;
+    font-family: Ubuntu;
+    font-size: 18px;
+    color: #e74c3c;
+    text-shadow: 1px 1px 2px #b4b4b4;
 }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
+.inputtext {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #e1e1e1;
+    font-size: 13px;
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    /* For Safari 3.0+ */
+    -webkit-transition-property: border, background;
+    -webkit-transition-duration: .5s, .9s;
+    -webkit-animation: ease-in-out;
+    /* Standard syntax */
+    transition-property: border, background;
+    transition-duration: .7s, .9s;
+    animation: ease-in-out;
+    resize: none;
+}
+.inputtext:focus {
+    border-bottom: 2px solid #e74c3c; /* f8646e, 56caca */
+    background-color: #f2f2f2;
 }
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+.gridinputtext {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 13px;
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    padding: 3px;
+    padding-right: 8px;
+    outline: none;
+    /* For Safari 3.0+ */
+    -webkit-transition-property: border, background;
+    -webkit-transition-duration: .5s, .9s;
+    -webkit-animation: ease-in-out;
+    /* Standard syntax */
+    transition-property: border, background;
+    transition-duration: .7s, .9s;
+    animation: ease-in-out;
+    resize: none;
 }
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+.gridinputtext:focus {
+    border-bottom: 1px solid #16997E; /* f8646e, 56caca */
+    background-color: #fff;
 }
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+
+.inputtext-readonly {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 13px;
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    resize: none;
+}
+
+.inputtext-tr {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 12px;
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    padding: 7px;
+    outline: none;
+    resize: none;
+}
+
+.inputtext-td{
+    padding: 7px;
+    vertical-align: top;
+}
+
+.gridinputtext-readonly {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 13px;
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    padding: 3px;
+    outline: none;
+    resize: none;
+}
+
+.input-group-addon{
+    border: 0;
+    border-bottom: 2px solid #e1e1e1;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    /* Remove #eee with White when you want to display content background color as enabled */
+    background-color: #f3f3f3;
+}
+
+.inputdisabled{
+    border: 0;
+    border-bottom: 2px solid #e1e1e1;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    /* Remove #eee with White when you want to display content background color as enabled */
+    background-color: #f3f3f3;
+}
+
+.btn-custom {
+    border-radius: 4px;
+    border: none;
+    background-color: #1BBC9B;
+    color: white;
+    vertical-align: middle;
+    width: 100%;
+    outline: none;
+    padding: 6px;
+    /*box-shadow: 1px 1px 5px #f0030f;*/
+    border-bottom: 2px solid #16997E;
+    font-weight: bold;
+}
+
+.btn-custom:hover{
+    color: white;
+}
+
+.btn-custom-sm {
+    border-radius: 5px;
+    border: none;
+    background-color: #1BBC9B;
+    color: white;
+    vertical-align: middle;
+    width: auto;
+    outline: none;
+    padding: 6px 10px;
+    /*box-shadow: 1px 1px 5px #f0030f;*/
+    border-bottom: 2px solid #16997E;
+    font-weight: bold;
+}
+
+.btn-custom-sm:hover{
+    color: white;
+}
+
+.btn-custom-icon {
+    border-radius: 3px;
+    border: none;
+    background-color: #BDC3C7;
+    color: #000;
+    vertical-align: middle;
+    width: 100%;
+    outline: none;
+    padding: 6px;
+    /*box-shadow: 1px 1px 5px #f0030f;*/
+    /*border-bottom: 3px solid #16997E;*/
+    font-weight: bold;
+    font-size: 15px;
+    text-shadow: 1px 1px 2px #9D9C9C;
+}
+
+.input-group-btn select {
+    border-color: #ccc;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.ui-datepicker {
+    font-size: 13px;
+}
+.ui-widget-header .ui-icon {
+    background-image: url(../images/ui-icons_228ef1_256x240.png);
+}
+#txtDate {
+    background-color: transparent;
+}
+
+#selCountryCode{
+    border: none;
+    background-color: transparent;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+::-webkit-input-placeholder {
+    color: #bdbdbd;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #bdbdbd;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #bdbdbd;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+:-ms-input-placeholder {
+    color: #bdbdbd;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 0px solid #ccc;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
 }

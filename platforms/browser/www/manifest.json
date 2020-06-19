@@ -6,6 +6,12 @@
   "version": "com.kpcl.SecScan",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "author": "Apache Cordova Team",
-  "icons": [],
+  "icons": [
+    {
+      "src": "KPCL-Icon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
   "start_url": "index.html"
 }
