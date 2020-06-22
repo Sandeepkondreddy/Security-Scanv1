@@ -7,10 +7,10 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-barcodescanner": {
       "PACKAGE_NAME": "com.kpcl.SecScan"
     },
-    "cordova-plugin-barcodescanner": {
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.kpcl.SecScan"
     }
   },
