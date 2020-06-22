@@ -4,7 +4,7 @@
   "name": "Security-Scan",
   "short_name": "Security-Scan",
   "version": "com.kpcl.SecScan",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "description": "Visitor, Workforce and Employee Pass Scan is a mobile app to scan using qr code to display visitor, workforce and blocked employee details. It is developed for Krishnapatnam Port Company Ltd.",
   "author": "Apache Cordova Team",
   "icons": [
     {

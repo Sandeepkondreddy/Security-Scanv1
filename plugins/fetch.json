@@ -10,7 +10,7 @@
   "cordova-plugin-barcodescanner": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-barcode-scanner2"
+      "id": "cordova-plugin-barcode-scanner2@^0.7.9"
     },
     "is_top_level": true,
     "variables": {}
